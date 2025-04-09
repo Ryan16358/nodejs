@@ -20,6 +20,11 @@ let posts = [
   { id: uuidv4(), username: "joe", content: " i love coding" },
 ];
 
+app.get("/", (req, res) => {
+    res.send("Welcome to my website!");
+});
+
+
 app.get("/posts", (req, res) => {
   res.render("index.ejs", { posts });
 });
