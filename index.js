@@ -13,9 +13,9 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 let posts = [
-  { id: uuidv4(), username: "john", content: "hello world" },
+  { id: uuidv4(), username: "ryan", content: "hello world" },
 
-  { id: uuidv4(), username: "jane", content: "i love programming" },
+  { id: uuidv4(), username: "jhon", content: "i love programming" },
 
   { id: uuidv4(), username: "joe", content: " i love coding" },
 ];
