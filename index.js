@@ -21,9 +21,8 @@ let posts = [
 ];
 
 app.get("/", (req, res) => {
-    res.send("Welcome to my website!");
+  res.send("Welcome to my website!");
 });
-
 
 app.get("/posts", (req, res) => {
   res.render("index.ejs", { posts });
@@ -46,12 +45,23 @@ app.get("/posts/:id", (req, res) => {
   res.render("show.ejs", { post });
 });
 
-app.patch("/posts/:id", (req, res) => {
+// app.patch("/posts/:id", (req, res) => {
+//   let { id } = req.params;
+//   let newContent = req.body.content;
+//   let post = posts.find((p) => id === p.id);
+//   post.content = newContent;
+//   res.redirect("/posts");
+// });
+app.post("/posts/:id/edit", (req, res) => {
   let { id } = req.params;
   let newContent = req.body.content;
-  let post = posts.find((p) => id === p.id);
-  post.content = newContent;
-  res.redirect("/posts");
+  let post = posts.find((p) => p.id === id);
+  if (post) {
+    post.content = newContent;
+    res.redirect("/posts");
+  } else {
+    res.status(404).send("Post not found");
+  }
 });
 
 app.get("/posts/:id/edit", (req, res) => {
