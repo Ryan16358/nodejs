@@ -13,9 +13,19 @@
       <h3 class="user">@<%= post.username %></h3>
       <h4 class="content"><%= post.content %></h4>
       <br />
-      <a href="http://localhost:8000/posts/<%=post.id %>">See in Details</a>
+      <!-- <a href="http://localhost:8000/posts/<%=post.id %>">See in Details</a> -->
+      <a
+        href="https://vast-gerianna-codingpython-12d2278e.koyeb.app/posts/<%= post.id %>"
+        >See in Details</a
+      >
+
       &nbsp;&nbsp;
-      <a href="http://localhost:8000/posts/<%=post.id %>/edit">Edit</a>
+      <!-- <a href="http://localhost:8000/posts/<%=post.id %>/edit">Edit</a> -->
+      <a
+        href="https://vast-gerianna-codingpython-12d2278e.koyeb.app/posts/<%= post.id %>/edit"
+        >Edit</a
+      >
+
       &nbsp;&nbsp;&nbsp;&nbsp;
       <form method="post" action="/posts/<%= post.id %>?_method=Delete">
         <button>Delete Post</button>
@@ -23,6 +33,9 @@
     </div>
     <%}%>
     <br /><br />
-    <a href="http://localhost:8000/posts/new"> Create new Post</a>
+    <!-- <a href="http://localhost:8000/posts/new"> Create new Post</a> -->
+    <a href="https://vast-gerianna-codingpython-12d2278e.koyeb.app/posts/new"
+      >Create new Post</a
+    >
   </body>
 </html>
